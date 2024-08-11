@@ -67,9 +67,3 @@ class AdRequest(db.Model):
 
 with app.app_context():
     db.create_all()
-
-    admin = User.query.filter_by(username = 'admin').first()
-    if not admin:
-        admin = User(username = 'admin', password = 'admin', name = 'admin', is_admin = True)
-        db.session.add(admin)
-        db.session.commit()    
