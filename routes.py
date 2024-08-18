@@ -18,9 +18,21 @@ def auth_required(func):
     return inner
     
 @app.route('/')
+@auth_requireddef index():
+    user = User.query.get(session['user_id'])
+    if user.is_admin:
+        return redirect(url_for('admin'))
+    else:
+        return render_template('index.html', user = user)
+
+@app.route('/admin')
 @auth_required
-def index():
-    return render_template('index.html', user = User.query.get(session['user_id']))
+def admin():
+    user = User.query.get(session['user_id'])
+    if not user.is_admin:
+        flash('You are not authorized to view this page.')
+        return redirect(url_for('index'))
+    return render_template('admin.html', user = user)
 
 @app.route('/profile')
 @auth_required
