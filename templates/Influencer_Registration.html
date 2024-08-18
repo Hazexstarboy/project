@@ -1,0 +1,68 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Registration
+{% endblock %}
+
+{% block content %}
+
+<h1>Influencer Registration</h1>
+
+<form method="post" class="mt-5">
+    <label for="username" class="form-label">Username :
+        <input type="text" name="username" id="username" class="form-control" required>
+    </label>
+    <label for="name" class="form-label">Name :
+        <input type="text" name="name" id="name" class="form-control" required>
+    </label>
+    <label for="password" class="form-label">Password :
+        <input type="password" name="password" id="password" class="form-control" required>
+    </label>
+    <label for="confirm_password" class="form-label">Confrim :
+        <input type="password" name="confirm_password" id="confirm_password" class="form-control" required>
+    </label>
+    <div class="form-group">
+        <label for="platforms" class="form-label">Platforms :</label>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-secondary active">
+                <input type="checkbox" name="platforms[]" value="youtube" class="btn btn-success">youtube
+            </label>
+            <label class="btn btn-secondary">
+                <input type="checkbox" name="platforms[]" value="twitter" class="btn btn-success">Instagram
+            </label>
+            <label class="btn btn-secondary">
+                <input type="checkbox" name="platforms[]" value="instagram" class="btn btn-success">Twitter
+            </label>
+            <label class="btn btn-secondary">
+                <input type="checkbox" name="platforms[]" value="tiktok" class="btn btn-success">Facebook
+            </label>
+        </div>
+    </div>
+    <input type="submit" value="Register" class="btn btn-success">
+</form>
+
+{% endblock %}
+
+{% block style %}
+    <style>
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1{
+            margin-top: 64px;
+            text-align: center;
+        }
+
+        .btn-group{
+            margin-bottom: 20px;
+        }
+
+        .btn-group label{
+            margin-right: 10px;
+        }
+
+    </style>
+{% endblock %}
