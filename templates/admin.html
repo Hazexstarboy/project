@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+{% block title %}
+    Admin Dashboard
+{% endblock %}
+{% block content %}
+    <h1>Admin Dashboard</h1>
+    <p>Welcome to the admin dashboard</p>
+    <div class="heading">
+        <h2 class="text-muted">Campaign 01</h2>
+        <button class="btn btn-success">View</button>
+    </div>
+    <div class="heading">
+        <h2 class="text-muted">Campaign 02</h2>
+        <button class="btn btn-success">View</button>
+    </div>
+{% endblock %}
+{% block style %}
+    <style>
+        .heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+    </style>
+{% endblock %}
